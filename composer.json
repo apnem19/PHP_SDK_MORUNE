@@ -1,0 +1,16 @@
+{
+    "name": "apnem19/morune",
+    "description": "Payment SDK",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Apnem19\\Morune\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "apnem19"
+        }
+    ],
+    "require": {}
+}
