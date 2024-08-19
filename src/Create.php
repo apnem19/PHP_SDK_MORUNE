@@ -16,7 +16,7 @@ Class Create {
 	private $exclude_service;
 	private $password;
 	
-	public function __construct($shop_id, $amount, $order_id, $currency = "RUB", $hook_url = null, $custom_fields = null, $comment = "Оплата счета", $fail_url = null, $success_url = null, $expire = 600, $include_service = [], $exclude_service = [], $password) {
+	public function __construct($shop_id, $amount, $order_id, $password $currency = "RUB", $hook_url = null, $custom_fields = null, $comment = "Оплата счета", $fail_url = null, $success_url = null, $expire = 600, $include_service = [], $exclude_service = []) {
         $this->shop_id = $shop_id;
         $this->amount = $amount;
         $this->order_id = $order_id;
@@ -55,7 +55,7 @@ Class Create {
 			curl_close($ch);
 					
 			if($result['status'] != 200){
-				return $result['error'];
+				return ['status' => 'error', 'error' => $result['error']];
 			}
 			
 			return $result['data']['url'];
